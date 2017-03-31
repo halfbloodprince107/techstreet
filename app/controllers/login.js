@@ -1,25 +1,40 @@
-'use strict';
 
-/**
- * @ngdoc function
- * @name app.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of yapp
- */
-angular.module('yapp')
-  .controller('LoginCtrl', function($scope, $location) {
+angular
+    .module('yapp')
+    .controller(
+        'LoginCtrl',['$scope', '$location', 'userLoginService', LoginCtrl]);
 
-    $scope.submit = function() {
-    	localStorage.setItem("loggeduser", $scope.loggeduser);
+function LoginCtrl($scope, $location, userLoginService) {
 
-        $scope.token = "aaa111";
 
-        localStorage.setItem("userToken", $scope.userToken);
+    // $scope.submit = function () {
+    //     localStorage.setItem("loggeduser", $scope.loggeduser);
+    //
+    //
+    //
+    //     return false;
+    // }
+    $scope.loginUser = function () {
+        console.log("in function ", $scope.loggeduser);
 
-      $location.path('#');
 
-      return false;
-    }
+        var dataObj = {
+            "userId": $scope.loggeduser,
+            "password": $scope.password
+        };
 
-  });
+
+        userLoginService.formPostData(dataObj).then(function (response) {
+            console.log("in get controller");
+            $scope.requestOutput = response.data;
+            console.log(response);
+
+        });
+
+
+        $location.path('/test');
+
+    };
+
+
+}

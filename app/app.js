@@ -11,7 +11,7 @@
 var cbapp = angular
   .module('yapp', [
     'ui.router',
-    'ngAnimate'
+    'ngAnimate',
   ])
   .config(function($stateProvider, $urlRouterProvider) {
 
@@ -25,11 +25,18 @@ var cbapp = angular
         templateUrl: 'views/base.html'
       })
         .state('login', {
-          url: '/login',
-          parent: 'base',
-          templateUrl: 'views/login.html',
-          controller: 'LoginCtrl'
+            url: '/login',
+            parent: 'base',
+            template: '<h1>ghrbdgbnxjhcjnjhhbchcghcghcghcg</h1>',
+            controller: 'LoginCtrl'
         })
+        .state('test', {
+            url: '/test',
+            parent: 'base',
+            template: '<h1>tthhiss is dummy tempplate</h1>',
+            // controller: 'LoginCtrl'
+        })
+
 
 
   });
