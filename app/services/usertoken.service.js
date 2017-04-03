@@ -52,7 +52,7 @@
                 console.log("in post service");
                 console.log(dataObj);
 
-                return $http.post("https://reqres.in/api/users", dataObj);
+                return $http.post("https://reqres.in/api/login", dataObj);
             }
 
 

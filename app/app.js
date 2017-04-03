@@ -27,13 +27,21 @@ var cbapp = angular
         .state('login', {
             url: '/login',
             parent: 'base',
-            template: '<h1>ghrbdgbnxjhcjnjhhbchcghcghcghcg</h1>',
+                templateUrl: 'views/login.html',
             controller: 'LoginCtrl'
         })
         .state('test', {
             url: '/test',
             parent: 'base',
-            template: '<h1>tthhiss is dummy tempplate</h1>',
+            templateUrl: 'views/login.html',
+
+            // controller: 'LoginCtrl'
+        })
+        .state('UI', {
+            url: '/UI',
+            parent: 'base',
+            templateUrl: 'views/UI.html',
+
             // controller: 'LoginCtrl'
         })
 
