@@ -49,8 +49,8 @@
 
 
             formPostData: function (dataObj) {
-                console.log("in post service");
-                console.log(dataObj);
+                // console.log("in post service");
+                // console.log(dataObj);
 
                 return $http.post("https://reqres.in/api/login", dataObj);
             }
